@@ -9,6 +9,7 @@ Table of Contents
 - [Usage examples](#usage-examples)
 - [Configuration](#configuration)
   - [Asset registration](#asset-registration)
+- [Publishing](#publishing)
 
 ## Overview
 
@@ -26,3 +27,9 @@ Assets are the best way to make use of this plugin. If you're not using an asset
 `sensuctl asset add karlvr/sensu-plugins-network-checks`
 
 If you're using an earlier version of sensuctl, you can find the asset on the [Bonsai Asset Index](https://bonsai.sensu.io/assets/karlvr/sensu-plugins-network-checks).
+
+## Publishing
+
+1. Tag and push the current commit with the next release version.
+2. Run `make` in order to create the release assets in the `dist` folder.
+3. Create a new Release on GitHub from the tag, and attach the files from the `dist` folder to the release.

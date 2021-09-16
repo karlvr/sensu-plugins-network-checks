@@ -50,8 +50,8 @@ while (my $line = <$fh>) {
 
 	next if $excludeinterfaceregex && $interface =~ $excludeinterfaceregex;
 	next if $includeinterfaceregex && $interface !~ $includeinterfaceregex;
-	next if @excludeinterface && any { $_ eq $interface } @excludeinterface;
-	next if @includeinterface && !any { $_ eq $interface } @includeinterface;
+	next if @excludeinterface && any { $interface =~ $_ } @excludeinterface;
+	next if @includeinterface && !any { $interface =~ $_ } @includeinterface;
 
 	$interface =~ s/\./_/;
 
